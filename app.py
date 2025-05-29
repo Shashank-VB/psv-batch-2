@@ -175,7 +175,7 @@ if input_mode == "Bulk Upload (CSV)":
                     per_hgvs=row["percent hgv"],
                     year=row["Year"],
                     lanes=int(row["Lanes"]),
-                    value1=row["Site category"],
+                    value1=row["category"],
                     value2=row["IL Value"],
                     df_psv_lookup=df_psv_lookup
                 )
