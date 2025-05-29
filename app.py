@@ -151,7 +151,7 @@ if input_mode == "Bulk Upload (CSV)":
         expected_cols = ["Site Number","Link Section","AADT Value","percent hgv","Year","Lanes","Site category","IL Value"]
         # Mapping for possible variants
         mapping = {
-            "Site category": ["Site category", "Site Category", "Site categroy"],
+            "category": ["Site category", "Site Category", "Site categroy"],
             "Link Section": ["Link Section", "Link section Number"],
             "AADT Value": ["AADT Value"],
             "percent hgv": ["percent hgv", "% HGVs"],
