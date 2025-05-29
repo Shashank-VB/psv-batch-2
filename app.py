@@ -146,7 +146,7 @@ if input_mode == "Bulk Upload (CSV)":
     if csv_file is not None:
         df_input = pd.read_csv(csv_file)
         # Standardize column names (strip spaces, fix typos, lower)
-        df_input.columns = [col.strip().replace("categroy", "category").replace("Link section Number", "Link Section").replace("Year ", "Year").replace("Number of lanes", "Lanes").replace("AADT Value", "AADT Value").replace("% HGVs", "percent hgv").replace("IL Value", "IL Value") for col in df_input.columns]
+        df_input.columns = [col.strip().replace("Site categroy", "category").replace("Link section Number", "Link Section").replace("Year ", "Year").replace("Number of lanes", "Lanes").replace("AADT Value", "AADT Value").replace("% HGVs", "percent hgv").replace("IL Value", "IL Value") for col in df_input.columns]
         # Check for required columns
         expected_cols = ["Site Number","Link Section","AADT Value","percent hgv","Year","Lanes","Site category","IL Value"]
         # Mapping for possible variants
