@@ -122,7 +122,9 @@ def process_row(
         "Design traffic Lane 2": lane_details_lane2,
         "Design traffic Lane 3": lane_details_lane3,
         "Design traffic Lane 4": lane_details_lane4,
-        "Min.PSV Lane 1": result1,
+        "Site category": Site category,
+        "IL value: IL Value,
+                "Min.PSV Lane 1": result1,
         "Min.PSV Lane 2": result2,
         "Min.PSV Lane 3": result3
     }
@@ -151,7 +153,7 @@ if input_mode == "Bulk Upload (CSV)":
         expected_cols = ["Site Number","Link Section","AADT Value","percent hgv","Year","Lanes","Site category","IL Value"]
         # Mapping for possible variants
         mapping = {
-            "category": ["Site category", "Site Category", "Site categroy"],
+            "category": ["Site category", "Site Category", "Site category"],
             "Link Section": ["Link Section", "Link section Number"],
             "AADT Value": ["AADT Value"],
             "percent hgv": ["percent hgv", "% HGVs"],
