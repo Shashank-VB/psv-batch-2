@@ -123,8 +123,8 @@ def process_row(
         "Design traffic Lane 3": lane_details_lane3,
         "Design traffic Lane 4": lane_details_lane4,
         "Site category": Site category,
-        "IL value: IL Value,
-                "Min.PSV Lane 1": result1,
+        "IL value": IL Value,
+        "Min.PSV Lane 1": result1,
         "Min.PSV Lane 2": result2,
         "Min.PSV Lane 3": result3
     }
