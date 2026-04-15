@@ -142,9 +142,9 @@ results_list = []
 
 if input_mode == "Bulk Upload (xlsx)":
     st.sidebar.header("Bulk CSV Upload")
-    xlsx_file = st.sidebar.file_uploader("Upload Input CSV File", type=["xlsx"])
+    xlsx_file = st.sidebar.file_uploader("Upload Input Excel file", type=["xlsx"])
     if xlsx_file is not None:
-        df_input = pd.read_xlsx(xlsx_file)
+        df_input = pd.read_excel(xlsx_file)
         # Standardize column names (strip spaces, fix typos, lower)
         df_input.columns = [col.strip().replace("Site category", "category").replace("Link section Number", "Link Section").replace("Year ", "Year").replace("Number of lanes", "Lanes").replace("AADT Value", "AADT Value").replace("% HGVs", "percent hgv").replace("IL Value", "IL Value") for col in df_input.columns]
         # Check for required columns
