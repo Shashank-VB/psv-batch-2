@@ -131,7 +131,7 @@ def process_row(
 st.title("Polished Stone Value (PSV) Calculator Results")
 
 # Mode selection
-input_mode = st.sidebar.radio("Select Input Mode:", ("Manual Entry", "Bulk Upload (CSV)"))
+input_mode = st.sidebar.radio("Select Input Mode:", ("Manual Entry", "Bulk Upload (xlsx)"))
 
 # PSV lookup table
 st.sidebar.header("Upload DMRB CD 236 table 3.3b")
