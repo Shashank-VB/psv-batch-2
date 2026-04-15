@@ -140,11 +140,18 @@ df_psv_lookup = pd.read_excel(psv_lookup_file) if psv_lookup_file is not None el
 
 results_list = []
 
-if input_mode == "Bulk Upload (CSV)":
-    st.sidebar.header("Bulk CSV Upload")
-    csv_file = st.sidebar.file_uploader("Upload Input CSV File", type=["csv"])
-    if csv_file is not None:
-        df_input = pd.read_csv(csv_file)
+if input_mode == "Bulk Upload (xlsx)":
+    st.sidebar.header("Bulk excel Upload")
+    excel_file = st.sidebar.file_uploader("Upload Input Excel File", type=["xlsx"])
+    if excel_file is not None:
+        df_input = pd.read_excel(excel_file)
+
+    df_input.columns = (
+    df_input.columns
+    .astype(str)
+    .str.strip()
+)
+
         # Standardize column names (strip spaces, fix typos, lower)
         df_input.columns = [col.strip().replace("Site category", "category").replace("Link section Number", "Link Section").replace("Year ", "Year").replace("Number of lanes", "Lanes").replace("AADT Value", "AADT Value").replace("% HGVs", "percent hgv").replace("IL Value", "IL Value") for col in df_input.columns]
         # Check for required columns
