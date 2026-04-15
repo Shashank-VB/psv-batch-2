@@ -143,8 +143,13 @@ results_list = []
 if input_mode == "Bulk Upload (CSV)":
     st.sidebar.header("Bulk CSV Upload")
     csv_file = st.sidebar.file_uploader("Upload Input CSV File", type=["csv"])
-    if csv_file is not None:
-        df_input = pd.read_csv(csv_file)
+    if csv_file is not None:       
+    df_input = pd.read_csv(
+    csv_file,
+    engine="python",        # Handles messy CSVs
+    encoding="utf-8-sig",   # Handles Excel BOM & UTF‑16 gracefully
+    skip_blank_lines=True
+)
         # Standardize column names (strip spaces, fix typos, lower)
         df_input.columns = [col.strip().replace("Site category", "category").replace("Link section Number", "Link Section").replace("Year ", "Year").replace("Number of lanes", "Lanes").replace("AADT Value", "AADT Value").replace("% HGVs", "percent hgv").replace("IL Value", "IL Value") for col in df_input.columns]
         # Check for required columns
