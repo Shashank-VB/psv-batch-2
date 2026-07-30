@@ -141,7 +141,7 @@ df_psv_lookup = pd.read_excel(psv_lookup_file) if psv_lookup_file is not None el
 results_list = []
 
 if input_mode == "Bulk Upload (xlsx)":
-    st.sidebar.header("Bulk xlsx Upload")
+    st.sidebar.header("Input xlsx file Upload")
     xlsx_file = st.sidebar.file_uploader("Upload Input Excel file", type=["xlsx"])
     if xlsx_file is not None:
         df_input = pd.read_excel(xlsx_file)
